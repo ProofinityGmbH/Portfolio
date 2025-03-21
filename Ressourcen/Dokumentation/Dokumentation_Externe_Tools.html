@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI - Externe Tools Dokumentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #EE7D2D;
+            --secondary-color: #236fa1;
+            --dark-blue: #0B0A1F;
+            --light-gray: #f4f4f9;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            line-height: 1.5;
+            background-color: white;
+            color: var(--text-color);
+            height: 100%;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .page-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            padding: 20mm 15mm;
+            box-shadow: var(--box-shadow);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--dark-blue);
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        p, li {
+            margin-bottom: 0.75rem;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .button i {
+            margin-right: 5px;
+        }
+
+        .button:hover {
+            background: #d66d20;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        hr {
+            height: 1px;
+            background-color: #e0e0e0;
+            border: none;
+            margin: 1.5rem 0;
+        }
+
+        .info-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .warning-box {
+            background-color: #fff8e6;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .success-box {
+            background-color: #edf9f0;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .tip-list li {
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .tip-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tutorial-step {
+            margin-bottom: 1.5rem;
+            counter-increment: step-counter;
+        }
+
+        .tutorial-step h3:before {
+            content: counter(step-counter) '. ';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10mm;
+            left: 15mm;
+            right: 15mm;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #777;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .highlight {
+            background-color: rgba(238, 125, 45, 0.1);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        .code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #d14;
+        }
+
+        .icon-inline {
+            vertical-align: middle;
+            color: var(--primary-color);
+            margin-right: 3px;
+        }
+
+        .custom-list {
+            padding-left: 25px;
+        }
+
+        .custom-list li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page-container {
+                width: 100%;
+                min-height: auto;
+                box-shadow: none;
+                padding: 15mm 10mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <div class="logo-title">
+                <img src="https://raw.githubusercontent.com/ProofinityGmbH/Portfolio/main/Ressourcen/Landing%20Page/Logo_Proofinity.png" alt="Proofinity Logo" class="logo">
+                <h1>Power BI - Externe Tools</h1>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <p><strong>Beschreibung:</strong> Power BI Desktop bietet eine leistungsstarke Möglichkeit, <span class="highlight">externe Tools</span> in ein eigenes Menüband zu integrieren, um Workflows zu optimieren, Metadaten zu verwalten oder spezifische Analysen durchzuführen.</p>
+            </div>
+
+            <p>Für das Management von externen Tools können Sie folgende Anwendungen nutzen:</p>
+            <ul class="custom-list">
+                <li><i class="ri-link icon-inline"></i> <strong>Power BI Sidetools</strong> (kostenlos) — <a href="https://thebipower.fr/index.php/power-bi-sidetools/" target="_blank" rel="noopener">Download</a></li>
+                <li><i class="ri-link icon-inline"></i> <strong>Conductor Pro</strong> (kostenpflichtig) — <a href="https://enterprisedna.co/tech/power-tools/" target="_blank" rel="noopener">Mehr Infos</a></li>
+            </ul>
+
+            <h2>Arten von Externen Tools</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool-Typ</th>
+                        <th>Beschreibung</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PowerShell-Skripte</td>
+                        <td>Automatisierung von Prozessen oder API-Abfragen für Power BI</td>
+                        <td><span class="code">powershell.exe -File "C:\Scripts\mein-script.ps1"</span></td>
+                    </tr>
+                    <tr>
+                        <td>Webseiten (URLs)</td>
+                        <td>Direkte Links zu Dokumentationen, Dashboards oder Web-APIs</td>
+                        <td><span class="code">https://powerquery.how/</span></td>
+                    </tr>
+                    <tr>
+                        <td>EXE-Dateien</td>
+                        <td>Lokale Anwendungen wie DAX Studio oder eigene Programme</td>
+                        <td><span class="code">"C:\Program Files\MyTool\MyApp.exe"</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Voraussetzungen</h2>
+            <ul class="custom-list">
+                <li>Power BI Desktop (aktuelle Version)</li>
+                <li>Power BI Sidetools installiert — <a href="https://thebipower.fr/index.php/power-bi-sidetools/" target="_blank" rel="noopener">Download</a></li>
+                <li>Administratorrechte, um Tools im Power BI-Verzeichnis zu registrieren</li>
+                <li>Ein Skript, eine Webseite oder eine Anwendung, die als externes Tool hinzugefügt werden soll</li>
+            </ul>
+
+            <h2>Vorgehensweise</h2>
+            <div class="tutorial-step">
+                <h3>Installation von Power BI Sidetools</h3>
+                <ul class="custom-list">
+                    <li><strong>Power BI Sidetools herunterladen</strong>: <a href="https://thebipower.fr/index.php/power-bi-sidetools/" target="_blank" rel="noopener">https://thebipower.fr/index.php/power-bi-sidetools/</a></li>
+                    <li><strong>Installation ausführen</strong> und sicherstellen, dass Power BI Desktop installiert ist.</li>
+                    <li><strong>Power BI Sidetools starten</strong> und die Benutzeroberfläche öffnen.</li>
+                </ul>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Neues Tool hinzufügen</h3>
+                <ol class="custom-list">
+                    <li>Klicke auf <span class="highlight">"New"</span> oder nutze den <span class="highlight">Wizard</span> für eine schrittweise Erstellung.</li>
+                    <li>Trage folgende Informationen ein:
+                        <ul class="custom-list">
+                            <li><strong>Tool Name:</strong> Der Name des Tools, das in Power BI angezeigt wird.</li>
+                            <li><strong>Beschreibung:</strong> Optionaler Beschreibungstext.</li>
+                            <li><strong>Version:</strong> Falls gewünscht, kann eine Versionsnummer angegeben werden.</li>
+                            <li><strong>Pfad:</strong> Der Pfad zur ausführbaren Datei, PowerShell-Skript oder URL.</li>
+                            <li><strong>Arguments:</strong> Zusätzliche Parameter, falls notwendig.</li>
+                            <li><strong>Icon:</strong> Ein Bild (PNG) für das Tool hochladen.</li>
+                        </ul>
+                    </li>
+                    <li>Speichere die Konfiguration mit <span class="highlight">"Save"</span>.</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Test in Power BI Desktop</h3>
+                <ol class="custom-list">
+                    <li>Starte <span class="highlight">Power BI Desktop</span>.</li>
+                    <li>Öffne einen bestehenden Bericht oder erstelle ein neues Modell.</li>
+                    <li>Navigiere zur <span class="highlight">Registerkarte "Externe Tools"</span>.</li>
+                    <li>Dein neu erstelltes Tool sollte hier erscheinen.</li>
+                    <li>Klicke auf das Tool, um es zu testen.</li>
+                </ol>
+            </div>
+
+            <div class="tutorial-step">
+                <h3>Bearbeiten oder Entfernen eines Tools</h3>
+                <p>Falls Änderungen notwendig sind:</p>
+                <ol class="custom-list">
+                    <li>Wähle das Tool in Power BI Sidetools aus.</li>
+                    <li>Klicke auf <span class="highlight">"Edit"</span>, um Anpassungen vorzunehmen.</li>
+                    <li>Falls das Tool nicht mehr benötigt wird, kann es über <span class="highlight">"Delete"</span> entfernt werden.</li>
+                </ol>
+            </div>
+
+            <h2>Beispiel: Externes Tool für PowerQuery.how</h2>
+            <p>Ein Beispiel für ein Web-Tool, das direkt in Power BI integriert wird:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Einstellung</th>
+                        <th>Wert</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>"PowerQuery How"</td>
+                    </tr>
+                    <tr>
+                        <td>Beschreibung</td>
+                        <td>"Die Webseite <em>powerquery.how</em> bietet umfassende Informationen zur M-Sprache."</td>
+                    </tr>
+                    <tr>
+                        <td>Version</td>
+                        <td>"1.0.0"</td>
+                    </tr>
+                    <tr>
+                        <td>Pfad</td>
+                        <td>https://powerquery.how/</td>
+                    </tr>
+                    <tr>
+                        <td>Icon</td>
+                        <td>Hochgeladen</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>➡️ Das Tool erscheint nun in der <span class="highlight">"Externe Tools"-Leiste</span> in Power BI.</p>
+
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/ProofinityGmbH/Portfolio/main/Ressourcen/Dokumentation/Externe_Tools_Power_BI_Sidetools.gif" alt="Animation der Power BI Sidetools" style="max-width: 100%;">
+            </div>
+
+            <h2>Zusatzfunktionen in Power BI</h2>
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/ProofinityGmbH/Portfolio/main/Ressourcen/Dokumentation/Power_BI_Desktop_Externe_Tools.png" alt="Power BI Desktop Externe Tools Menüband" style="max-width: 100%;">
+            </div>
+
+            <h2>Ergebnis</h2>
+            <div class="success-box">
+                <p>Nach erfolgreicher Einrichtung kann das neue externe Tool direkt in Power BI Desktop verwendet werden. Vorteile:</p>
+                <ul class="tip-list">
+                    <li><strong>Einfache Integration eigener Tools ohne manuelle JSON-Bearbeitung</strong></li>
+                    <li><strong>Unterstützung von PowerShell-Skripten, Webseiten & Anwendungen</strong></li>
+                    <li><strong>Personalisierung mit eigenem Logo & Beschreibung</strong></li>
+                </ul>
+                <p>Durch <span class="highlight">Power BI Sidetools</span> wird die Erstellung externer Tools enorm erleichtert.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div>Daten vervollständigt mit <span style="text-decoration: underline;">"& [ChatGPT-Modell] &"</span> und manuell reviewt.</div>
+            <div>Bericht: " & [RS - Report Date] & "</div>
+        </footer>
+    </div>
+</body>
+
+</html>
