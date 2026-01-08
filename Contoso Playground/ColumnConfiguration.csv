@@ -1,0 +1,97 @@
+﻿TableName;ColumnName;FriendlyName;LoadToModel;DataType
+Sales;Order Number;Order Number;Yes;Int64.Type
+Sales;Line Number;Line Number;Yes;Int64.Type
+Sales;Order Date;Order Date;Yes;type date
+Sales;Delivery Date;Delivery Date;Yes;type date
+Sales;CustomerKey;Customer Key;Yes;Int64.Type
+Sales;StoreKey;Store Key;Yes;Int64.Type
+Sales;ProductKey;Product Key;Yes;Int64.Type
+Sales;Quantity;Quantity;Yes;Int64.Type
+Sales;Unit Price;Unit Price;Yes;Decimal.Type
+Sales;Net Price;Net Price;Yes;Decimal.Type
+Sales;Unit Cost;Unit Cost;Yes;Decimal.Type
+Sales;Currency Code;Currency Code;No;type text
+Sales;Exchange Rate;Echange Rate;No;Decimal.Type
+CurrencyExchange;Date;Date;Yes;type date
+CurrencyExchange;FromCurrency;From Currency;Yes;type text
+CurrencyExchange;ToCurrency;To Currency;Yes;type text
+CurrencyExchange;Exchange;Exchange;Yes;Decimal.Type
+Customer;CustomerKey;Customer Key;Yes;Int64.Type
+Customer;GeoAreaKey;Geo Area Key;Yes;Int64.Type
+Customer;StartDT;Startdate;Yes;type date
+Customer;EndDT;Enddate;Yes;type date
+Customer;Continent;Continent;Yes;type text
+Customer;Gender;Gender;Yes;type text
+Customer;Title;Title;Yes;type text
+Customer;GivenName;Given Name;Yes;type text
+Customer;MiddleInitial;Middle Initial;Yes;type text
+Customer;Surname;Surname;Yes;type text
+Customer;StreetAddress;Street Adress;Yes;type text
+Customer;City;City;Yes;type text
+Customer;State;State;Yes;type text
+Customer;StateFull;State Full;Yes;type text
+Customer;ZipCode;Zip Code;Yes;type text
+Customer;Country;Country;Yes;type text
+Customer;CountryFull;Country Full;Yes;type text
+Customer;Birthday;Birthday;Yes;type date
+Customer;Age;Age;Yes;Int64.Type
+Customer;Occupation;Occupation;Yes;type text
+Customer;Company;Company;Yes;type text
+Customer;Vehicle;Vehicle;Yes;type text
+Customer;Latitude;Latitude;Yes;type text
+Customer;Longitude;Longitude;Yes;type text
+Date;Date;Date;Yes;type date
+Date;DateKey;Date Key;Yes;Int64.Type
+Date;Year;Year;Yes;Int64.Type
+Date;YearQuarter;Year Quarter;Yes;type text
+Date;YearQuarterNumber;Year Quarter Number;Yes;Int64.Type
+Date;Quarter;Quarter;Yes;type text
+Date;YearMonth;Year Month;Yes;type text
+Date;YearMonthShort;Year Month Short;Yes;type text
+Date;YearMonthNumber;Year Month Number;Yes;Int64.Type
+Date;Month;Month;Yes;type text
+Date;MonthShort;Month Short;Yes;type text
+Date;MonthNumber;Month Number;Yes;Int64.Type
+Date;DayofWeek;Day of Week;Yes;type text
+Date;DayofWeekShort;Day of Week Short;Yes;type text
+Date;DayofWeekNumber;Day of Week Number;Yes;Int64.Type
+Date;WorkingDay;Working Day;Yes;Int64.Type
+Date;WorkingDayNumber;Working Day Number;Yes;Int64.Type
+OrderRows;OrderKey;Order Key;Yes;Int64.Type
+OrderRows;LineNumber;Line Number;Yes;Int64.Type
+OrderRows;ProductKey;Product Key;Yes;Int64.Type
+OrderRows;Quantity;Quantity;Yes;Int64.Type
+OrderRows;UnitPrice;Unite Price;Yes;Decimal.Type
+OrderRows;NetPrice;Net Price;Yes;Decimal.Type
+OrderRows;UnitCost;Unit Cost;Yes;Decimal.Type
+Orders;OrderKey;Order Key;Yes;Int64.Type
+Orders;CustomerKey;Customer Key;Yes;Int64.Type
+Orders;StoreKey;Store Key;Yes;Int64.Type
+Orders;OrderDate;Order Date;Yes;type date
+Orders;DeliveryDate;Delivery Date;Yes;type date
+Orders;CurrencyCode;Currency Code;Yes;type text
+Product;ProductKey;Product Key;Yes;Int64.Type
+Product;Product Code;Product Code;Yes;type text
+Product;Product Name;Product Name;Yes;type text
+Product;Manufacturer;Manufacturer;Yes;type text
+Product;Brand;Brand;Yes;type text
+Product;Color;Color;Yes;type text
+Product;Weight Unit Measure;Weight Unit Measure;Yes;type text
+Product;Weight;Weight;Yes;Int64.Type
+Product;Unit Cost;Unit Cost;Yes;Decimal.Type
+Product;Unit Price;Unit Price;Yes;Decimal.Type
+Product;Subcategory Code;Subcategory Code;Yes;type text
+Product;Subcategory;Subcategory;Yes;type text
+Product;Category Code;Category Code;Yes;type text
+Product;Category;Category;Yes;type text
+Store;StoreKey;Store Key;Yes;type text
+Store;StoreCode;Store Code;Yes;type text
+Store;GeoAreaKey;Geo Area Key;Yes;type text
+Store;CountryCode;Country Code;Yes;type text
+Store;CountryName;Country Name;Yes;type text
+Store;State;State;Yes;type text
+Store;OpenDate;Open Date;Yes;type date
+Store;CloseDate;Close Date;Yes;type date
+Store;Description;Description;Yes;type text
+Store;SquareMeters;Square Meters;Yes;Decimal.Type
+Store;Status;Status;Yes;type text
